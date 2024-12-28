@@ -4,7 +4,7 @@ import Navbar from "../navbar/navbar";
 import Collage from "../collage/collage";
 import { useNavigate } from "react-router-dom";
 
-const Wellcome = () => {
+const Welcome = () => {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
@@ -29,4 +29,4 @@ const Wellcome = () => {
   );
 };
 
-export default Wellcome;
+export default Welcome;
