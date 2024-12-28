@@ -46,6 +46,16 @@ module.exports = {
     port: 9000,
     historyApiFallback: true,
     open: true,
+    proxy: [
+      {
+        context: "/api/home/images",
+        target: "http://localhost:5000",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/api/home/images": "/images",
+        },
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({

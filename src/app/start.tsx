@@ -1,10 +1,13 @@
-import ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import App from "../pages/home/ui";
 import React from "react";
 
 const start = () => {
-  const documentRender: any = document.getElementById("root");
-  const root = ReactDOM.createRoot(documentRender);
+  const documentRender: HTMLElement | null = document.getElementById("root");
+
+  if (!documentRender) return;
+
+  const root = createRoot(documentRender);
   root.render(<App />);
 };
 

@@ -6,6 +6,10 @@
       "esModuleInterop": true,
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
+      "baseUrl": "src",
+      "paths": {
+        "@/*": ["*"]
+      },
       "jsx": "react"
     },
     "include": ["src/**/*"]

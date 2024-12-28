@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Wellcome from "../../../components/wellcome/wellcome";
+import Wellcome from "@/components/wellcome/wellcome";
 
 const App = () => {
   return (
