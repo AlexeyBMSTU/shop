@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./styles.scss";
 import getImages from "@/shared/images/getImages";
 
-
 const Collage = () => {
   const [images, setImages] = useState([]);
 

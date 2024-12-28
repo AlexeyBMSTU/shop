@@ -3,7 +3,10 @@ import documentationServices from "../consts/consts";
 
 const getImages = async () => {
   return await goToServer(
-    { method: documentationServices.home.getImages.method, url: documentationServices.home.getImages.url },
+    {
+      method: documentationServices.home.getImages.method,
+      url: documentationServices.home.getImages.url,
+    },
     (response: any) => {
       return response;
     },

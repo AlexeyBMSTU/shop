@@ -12,22 +12,22 @@ const goToServer = async (
           return callback(response);
         })
         .catch((error: any) => {
-            throw new Error(`Axios error! - ${error}`);
+          throw new Error(`Axios error! - ${error}`);
         });
     }
     case "POST": {
-        return axios
-          .post(objectArgs.url, objectArgs.body)
-          .then((response: any) => {
-            return callback(response);
-          })
-          .catch((error: any) => {
-            throw new Error(`Axios error! - ${error}`);
-          });
-      }
-      default: {
-        throw new Error(`Method not implemented!`);
-      }
+      return axios
+        .post(objectArgs.url, objectArgs.body)
+        .then((response: any) => {
+          return callback(response);
+        })
+        .catch((error: any) => {
+          throw new Error(`Axios error! - ${error}`);
+        });
+    }
+    default: {
+      throw new Error(`Method not implemented!`);
+    }
   }
 };
 

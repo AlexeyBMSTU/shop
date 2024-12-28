@@ -1,11 +1,10 @@
 const documentationServices: DocumentationServices = {
-    home:  {
-        getImages: {
-            method: 'GET',
-            url: '/api/home/images',
-        }
-    }
-}
+  home: {
+    getImages: {
+      method: "GET",
+      url: "/api/home/images",
+    },
+  },
+};
 
-export default documentationServices
-
+export default documentationServices;
