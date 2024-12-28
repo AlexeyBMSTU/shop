@@ -1,0 +1,22 @@
+// src/style.scss
+
+$body-background-color: #d9c3b0;
+$body-text-color: #260b01;
+$time: 0.3s;
+
+:root {
+  --background-color: #d9c3b0;
+  --text-hover-color: #73482f;
+  --text-color: #260b01;
+  --gray-color: #bfbfbf;
+  --gray-dark-color: #404040;
+  --time: 0.3s;
+}
+
+body {
+  background-color: $body-background-color;
+  margin: 0;
+}
+body::-webkit-scrollbar {
+  display: none;
+}

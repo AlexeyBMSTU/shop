@@ -1,0 +1,29 @@
+@use "@/styles/main.scss";
+
+.navbar {
+  display: flex;
+  gap: 20px;
+  align-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  color: var(--text-color);
+  background-color: var(--text-hover-color);
+
+  &__home-referens,
+  &__shop-referens,
+  &__auth-referens {
+    cursor: pointer;
+    transition: color var(--time) ease;
+  }
+  &__effects:hover {
+    color: var(--text-hover-color);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar__home-referens,
+  .navbar__shop-referens,
+  .navbar__auth-referens {
+    font-size: 10px;
+  }
+}

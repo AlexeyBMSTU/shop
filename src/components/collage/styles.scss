@@ -1,0 +1,66 @@
+$acceleration: 50px;
+$defaultSize: 300px;
+$defaultMobileSize: 150px;
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.block_img {
+  padding: 10px;
+  display: flex;
+  grid-gap: 10px;
+  flex-direction: row;
+  overflow-x: auto;
+  scrollbar-width: none;
+  height: calc(#{$defaultSize} + #{$acceleration});
+  align-items: center;
+  justify-content: center;
+}
+
+.img_box img {
+  border-radius: 30px 10px 30px 10px;
+  height: $defaultSize;
+  width: $defaultSize;
+  cursor: pointer;
+  transition:
+    width var(--time) ease,
+    height var(--time) ease;
+}
+
+.img_box img:hover {
+  height: calc(#{$defaultSize} + #{$acceleration});
+  width: calc(#{$defaultSize} + #{$acceleration});
+}
+
+@media (max-width: 768px) {
+  .img_box img {
+    height: #{$defaultMobileSize};
+    width: #{$defaultMobileSize};
+  }
+
+  .img_box img:hover {
+    height: calc(#{$defaultMobileSize} + #{$acceleration});
+    width: calc(#{$defaultMobileSize} + #{$acceleration});
+  }
+  .block_img {
+    height: calc(#{$defaultMobileSize} + #{$acceleration});
+  }
+}
+
+.box1 {
+  grid-area: box1;
+}
+.box2 {
+  grid-area: box2;
+}
+.box3 {
+  grid-area: box3;
+}
+.box4 {
+  grid-area: box4;
+}
+.box5 {
+  grid-area: box5;
+}
