@@ -11,7 +11,7 @@ $defaultMobileSize: 150px;
 }
 
 .block_img {
-  padding: 10px;
+  padding: 50px;
   display: flex;
   grid-gap: 10px;
   flex-direction: row;
@@ -20,7 +20,9 @@ $defaultMobileSize: 150px;
   height: calc(#{$defaultSize} + #{$acceleration});
   align-items: center;
 }
-
+.img_box {
+  width: 300px;
+}
 .img_box img {
   border-radius: 30px 10px 30px 10px;
   height: $defaultSize;

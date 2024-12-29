@@ -1,10 +1,13 @@
 import React from "react";
 import "./styles.scss";
-
-const Loader = ({ isLoading }: any) => {
+interface LoaderProps {
+  isLoading: boolean;
+  customStyle?: React.CSSProperties;
+}
+const Loader: React.FC<LoaderProps> = ({ isLoading, customStyle }: any) => {
   return (
     isLoading && (
-      <div className="place-loader">
+      <div style={customStyle} className="place-loader">
         <span className="loader"></span>
       </div>
     )

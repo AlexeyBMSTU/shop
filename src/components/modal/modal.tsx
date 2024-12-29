@@ -13,7 +13,7 @@ const Modal = ({ closeModal, selectedImage }: any) => {
   return (
     <div className="modal">
       <div className="modal__content">
-        <Loader isLoading={isLoading} />
+        <Loader customStyle={{ minHeight: "200px" }} isLoading={isLoading} />
         <ImageComponent
           handleImageLoad={handleImageLoad}
           selectedImage={selectedImage}

@@ -4,9 +4,14 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
-  max-width: 150px;
+  width: 300px;
   padding: 5px;
   gap: 10px;
+}
+@media (max-width: 768px) {
+  .place__interactive {
+    width: 100%;
+  }
 }
 .author-avatar {
   border-radius: 50%;
@@ -26,18 +31,19 @@
   flex-direction: column;
   gap: 10px;
 }
-.place__comment-author {
+.place__section-author {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
 }
-.place__comment-author-avatar {
+.place__section-author-avatar {
   height: 60px;
   width: 60px;
+  cursor: pointer;
 }
-.place__comment-author-username {
+.place__section-author-username {
   font-weight: bold;
   cursor: pointer;
 }

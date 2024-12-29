@@ -1,7 +1,12 @@
 import React from "react";
 import "./styles.scss";
 
-const ImageComponent = ({ handleImageLoad, selectedImage, isLoading }: any) => {
+const ImageComponent = ({
+  handleImageLoad,
+  selectedImage,
+  isLoading,
+  customClassName,
+}: any) => {
   return (
     <div
       className="place__image"
@@ -11,7 +16,7 @@ const ImageComponent = ({ handleImageLoad, selectedImage, isLoading }: any) => {
         onLoad={handleImageLoad}
         src={selectedImage}
         alt="Selected"
-        className="modal__image"
+        className={customClassName ? customClassName : "modal__image"}
       />
     </div>
   );

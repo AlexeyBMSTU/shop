@@ -66,13 +66,13 @@ const Welcome: React.FC = () => {
       <Navbar />
       <Collage openModal={openModal} />
       <form className="welcome__form">
-        <h1 className="welcome__message">Диван мечты всегда мягче!</h1>
+        <h1 className="welcome__message">Поделись своими фотографиями!</h1>
         <button
           type="button"
           onClick={handleButtonClick}
           className="welcome__button welcome__button-state"
         >
-          К покупкам!
+          Вперед!
         </button>
       </form>
 

@@ -22,3 +22,17 @@ body::-webkit-scrollbar {
 #root {
   height: 100%;
 }
+
+.start-loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

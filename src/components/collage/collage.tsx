@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./styles.scss";
 import getImages from "@/shared/images/getImages";
+import Loader from "@/components/loader/loader";
+import ImageComponent from "@/components/modal/components/image/imageComponent";
 
 const Collage = ({ openModal }: any) => {
   const [images, setImages] = useState([]);
@@ -17,7 +19,11 @@ const Collage = ({ openModal }: any) => {
 
     fetchImages();
   }, []);
+  const [isLoading, setIsLoading] = useState(true);
 
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  };
   return (
     <div className="container">
       <div className="block_img">
@@ -27,7 +33,13 @@ const Collage = ({ openModal }: any) => {
             key={index}
             onClick={() => openModal(src)}
           >
-            <img src={src} alt={`Image ${index + 1}`} />
+            <Loader isLoading={isLoading} />
+            <ImageComponent
+              handleImageLoad={handleImageLoad}
+              selectedImage={src}
+              isLoading={isLoading}
+              customClassName="collage-images"
+            />
           </div>
         ))}
       </div>
