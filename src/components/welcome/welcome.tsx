@@ -1,9 +1,9 @@
-import React, { useState, MouseEvent } from "react";
-import "./styles.scss";
-import Navbar from "@/components/navbar/navbar";
-import Collage from "@/components/collage/collage";
-import { useNavigate } from "react-router-dom";
-import Modal from "@/components/modal/modal";
+import React, { useState, MouseEvent } from 'react';
+import './styles.scss';
+import Navbar from '@/components/navbar/navbar';
+import Collage from '@/components/collage/collage';
+import { useNavigate } from 'react-router-dom';
+import Modal from '@/components/modal/modal';
 
 const welcomeControl = (): [
   (event: MouseEvent<HTMLDivElement>) => void,
@@ -16,7 +16,7 @@ const welcomeControl = (): [
   const navigate = useNavigate();
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [selectedImage, setSelectedImage] = useState<string>("");
+  const [selectedImage, setSelectedImage] = useState<string>('');
 
   const openModal = (imageSrc: string) => {
     setSelectedImage(imageSrc);
@@ -26,18 +26,18 @@ const welcomeControl = (): [
   const closeModal = (event: MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
     setIsModalOpen(false);
-    setSelectedImage("");
+    setSelectedImage('');
   };
 
   const clickSideArea = (event: MouseEvent<HTMLDivElement>) => {
-    if (isModalOpen && !(event.target as Element).closest(".modal")) {
+    if (isModalOpen && !(event.target as Element).closest('.modal')) {
       setIsModalOpen(false);
-      setSelectedImage("");
+      setSelectedImage('');
     }
   };
 
   const handleButtonClick = () => {
-    navigate("/auth");
+    navigate('/auth');
   };
 
   return [
@@ -61,16 +61,16 @@ const Welcome: React.FC = () => {
   ] = welcomeControl();
 
   return (
-    <div className="welcome" onClick={clickSideArea}>
-      {isModalOpen && <div className="dark-overlay" />}
+    <div className='welcome' onClick={clickSideArea}>
+      {isModalOpen && <div className='dark-overlay' />}
       <Navbar />
       <Collage openModal={openModal} />
-      <form className="welcome__form">
-        <h1 className="welcome__message">Поделись своими фотографиями!</h1>
+      <form className='welcome__form'>
+        <h1 className='welcome__message'>Поделись своими фотографиями!</h1>
         <button
-          type="button"
+          type='button'
           onClick={handleButtonClick}
-          className="welcome__button welcome__button-state"
+          className='welcome__button welcome__button-state'
         >
           Вперед!
         </button>

@@ -1,8 +1,8 @@
 const documentationServices: DocumentationServices = {
   home: {
     getImages: {
-      method: "GET",
-      url: "/api/home/images",
+      method: 'GET',
+      url: '/api/home/images',
     },
   },
 };

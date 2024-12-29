@@ -1,5 +1,5 @@
-import React from "react";
-import "./styles.scss";
+import React from 'react';
+import './styles.scss';
 
 const ImageComponent = ({
   handleImageLoad,
@@ -9,14 +9,14 @@ const ImageComponent = ({
 }: any) => {
   return (
     <div
-      className="place__image"
-      style={{ display: isLoading ? "none" : "flex" }}
+      className='place__image'
+      style={{ display: isLoading ? 'none' : 'flex' }}
     >
       <img
         onLoad={handleImageLoad}
         src={selectedImage}
-        alt="Selected"
-        className={customClassName ? customClassName : "modal__image"}
+        alt='Selected'
+        className={customClassName ? customClassName : 'modal__image'}
       />
     </div>
   );

@@ -1,3 +1,3 @@
-import start from "@/app/start";
+import start from '@/app/start';
 
 start();

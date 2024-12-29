@@ -1,11 +1,17 @@
-import axios from "axios";
+import axios from 'axios';
 
+/**
+ * Функция, делающая запрос на бекенд
+ * @param objectArgs Аргументы
+ * @param callback Коллбек
+ * @returns
+ */
 const goToServer = async (
   objectArgs: { method: string; url: string; body?: any },
   callback: Function,
 ) => {
   switch (objectArgs.method) {
-    case "GET": {
+    case 'GET': {
       return axios
         .get(objectArgs.url)
         .then((response: any) => {
@@ -15,7 +21,7 @@ const goToServer = async (
           throw new Error(`Axios error! - ${error}`);
         });
     }
-    case "POST": {
+    case 'POST': {
       return axios
         .post(objectArgs.url, objectArgs.body)
         .then((response: any) => {

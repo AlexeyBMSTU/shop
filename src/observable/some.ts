@@ -25,23 +25,23 @@ class EventEmitter {
   }
 }
 
-const button = document.createElement("button");
-button.textContent = "Click me";
+const button = document.createElement('button');
+button.textContent = 'Click me';
 document.body.appendChild(button);
 
 const emitter = new EventEmitter();
 
 const handleClick = () => {
-  console.log("Button was clicked!");
+  console.log('Button was clicked!');
 };
 
-emitter.addEventListener("click", handleClick);
+emitter.addEventListener('click', handleClick);
 
-button.addEventListener("click", () => {
-  emitter.emit("click");
+button.addEventListener('click', () => {
+  emitter.emit('click');
 });
 
 setTimeout(() => {
-  emitter.removeEventListener("click", handleClick);
-  console.log("Unsubscribed from click event");
+  emitter.removeEventListener('click', handleClick);
+  console.log('Unsubscribed from click event');
 }, 5000);
