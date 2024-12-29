@@ -1,6 +1,7 @@
-@use "@/styles/main.scss";
+@use "@/static/styles/main.scss";
 
 .welcome {
+  height: 100%;
   &__form {
     display: flex;
     justify-content: flex-end;
@@ -18,4 +19,14 @@
     cursor: pointer;
     color: var(--text-color);
   }
+}
+
+.dark-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); // Полупрозрачный черный фон
+  z-index: 999; // Убедитесь, что он выше других элементов
 }

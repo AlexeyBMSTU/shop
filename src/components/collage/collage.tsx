@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./styles.scss";
 import getImages from "@/shared/images/getImages";
 
-const Collage = () => {
+const Collage = ({ openModal }: any) => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
@@ -22,7 +22,11 @@ const Collage = () => {
     <div className="container">
       <div className="block_img">
         {images.map((src, index) => (
-          <div className={`img_box box${index + 1}`} key={index}>
+          <div
+            className={`img_box box${index + 1}`}
+            key={index}
+            onClick={() => openModal(src)}
+          >
             <img src={src} alt={`Image ${index + 1}`} />
           </div>
         ))}

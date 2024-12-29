@@ -1,5 +1,5 @@
-import goToServer from "../axios/axios";
-import documentationServices from "../consts/consts";
+import goToServer from "@/shared/axios/axios";
+import documentationServices from "@/shared/consts/consts";
 
 const getImages = async () => {
   return await goToServer(

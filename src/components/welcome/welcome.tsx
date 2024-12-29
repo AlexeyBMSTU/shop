@@ -1,20 +1,70 @@
-import React from "react";
+import React, { useState, MouseEvent } from "react";
 import "./styles.scss";
-import Navbar from "../navbar/navbar";
-import Collage from "../collage/collage";
+import Navbar from "@/components/navbar/navbar";
+import Collage from "@/components/collage/collage";
 import { useNavigate } from "react-router-dom";
+import Modal from "@/components/modal/modal";
 
-const Welcome = () => {
+const welcomeControl = (): [
+  (event: MouseEvent<HTMLDivElement>) => void,
+  boolean,
+  (imageSrc: string) => void,
+  (event: MouseEvent<HTMLDivElement>) => void,
+  () => void,
+  string,
+] => {
   const navigate = useNavigate();
+
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [selectedImage, setSelectedImage] = useState<string>("");
+
+  const openModal = (imageSrc: string) => {
+    setSelectedImage(imageSrc);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = (event: MouseEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+    setIsModalOpen(false);
+    setSelectedImage("");
+  };
+
+  const clickSideArea = (event: MouseEvent<HTMLDivElement>) => {
+    if (isModalOpen && !(event.target as Element).closest(".modal")) {
+      setIsModalOpen(false);
+      setSelectedImage("");
+    }
+  };
 
   const handleButtonClick = () => {
     navigate("/auth");
   };
 
+  return [
+    clickSideArea,
+    isModalOpen,
+    openModal,
+    closeModal,
+    handleButtonClick,
+    selectedImage,
+  ];
+};
+
+const Welcome: React.FC = () => {
+  const [
+    clickSideArea,
+    isModalOpen,
+    openModal,
+    closeModal,
+    handleButtonClick,
+    selectedImage,
+  ] = welcomeControl();
+
   return (
-    <div className="welcome">
+    <div className="welcome" onClick={clickSideArea}>
+      {isModalOpen && <div className="dark-overlay" />}
       <Navbar />
-      <Collage />
+      <Collage openModal={openModal} />
       <form className="welcome__form">
         <h1 className="welcome__message">Диван мечты всегда мягче!</h1>
         <button
@@ -25,6 +75,10 @@ const Welcome = () => {
           К покупкам!
         </button>
       </form>
+
+      {isModalOpen && (
+        <Modal closeModal={closeModal} selectedImage={selectedImage} />
+      )}
     </div>
   );
 };

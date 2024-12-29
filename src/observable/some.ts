@@ -38,7 +38,7 @@ const handleClick = () => {
 emitter.addEventListener("click", handleClick);
 
 button.addEventListener("click", () => {
-  emitter.emit("click"); 
+  emitter.emit("click");
 });
 
 setTimeout(() => {
