@@ -3,16 +3,19 @@ $body-text-color: #260b01;
 $time: 0.3s;
 
 :root {
-  --background-color: #d9c3b0;
+  // --background-color: #0f9ebc;
+  --background-color: #0a2a43;
   --text-hover-color: #73482f;
   --text-color: #260b01;
+  --text-pink-color: #ff8b8b;
   --gray-color: #bfbfbf;
   --gray-dark-color: #404040;
   --time: 0.3s;
+  --background-color-dark-blue: #051521;
 }
 
 body {
-  background-color: $body-background-color;
+  background-color: var(--background-color);
   margin: 0;
   height: 100vh;
   font-family: 'Roboto', sans-serif;
@@ -22,6 +25,10 @@ body::-webkit-scrollbar {
 }
 #root {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .start-loader {
@@ -36,4 +43,8 @@ body::-webkit-scrollbar {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+* {
+  box-sizing: border-box; /* Учитываем отступы и границы в размерах */
 }

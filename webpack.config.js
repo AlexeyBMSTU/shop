@@ -35,7 +35,19 @@ module.exports = {
           'css-loader', 
           'sass-loader' 
         ],
-      }
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i, // Добавьте это правило для изображений
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]', // Настройте имя выходного файла
+              outputPath: 'images/', // Папка для выходных изображений
+            },
+          },
+        ],
+      },
     ]
   },
   devServer: {

@@ -16,6 +16,7 @@ $defaultMobileSize: 150px;
   grid-gap: 10px;
   flex-direction: row;
   overflow-x: auto;
+  overflow-y: hidden;
   scrollbar-width: none;
   height: calc(#{$defaultSize} + #{$acceleration});
   align-items: center;
@@ -72,4 +73,56 @@ $defaultMobileSize: 150px;
 .modal_image {
   height: 100%;
   width: 100%;
+}
+
+.image1 img,
+.image2 img,
+.image3 img,
+.image4 img,
+.image5 img,
+.image7 img,
+.image8 img,
+.image9 img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  object-fit: cover;
+}
+.image3,
+.image5 {
+  grid-row: span 3;
+}
+.image1 {
+  grid-row: span 4;
+}
+.image2,
+.image4,
+.text-image6,
+.image7,
+.image8,
+.image9 {
+  grid-row: span 2;
+}
+.text-image6 {
+  text-align: center;
+  overflow-wrap: break-word;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+@media (min-width: 768px) {
+  .text-image6 {
+    font-size: 30px;
+  }
+}
+.initial {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, auto);
+  gap: 10px;
+  max-width: 1000px;
+  padding: 10px;
 }

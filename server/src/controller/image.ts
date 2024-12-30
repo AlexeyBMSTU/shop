@@ -1,6 +1,10 @@
-import { images } from '@/db/db'
-import { app } from '@/server'
+import {images} from '../server'
+import { app } from '../server'
 
-app.get('/images', (req: any, res: any) => {
-	res.json(images);
-});
+const getImages = () => {
+	return app.get('/images', (req: any, res: any) => {
+		res.json(images);
+	});
+}
+
+export default getImages;
