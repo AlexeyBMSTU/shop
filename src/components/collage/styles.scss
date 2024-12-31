@@ -52,6 +52,9 @@ $defaultMobileSize: 150px;
   .block_img {
     height: calc(#{$defaultMobileSize} + #{$acceleration});
   }
+  .initial {
+    max-height: 630px;
+  }
 }
 
 .box1 {
@@ -87,7 +90,25 @@ $defaultMobileSize: 150px;
   width: 100%;
   background-size: cover;
   object-fit: cover;
+  border-radius: 10px;
+  transition:
+    width var(--time) ease,
+    height var(--time) ease;
+  cursor: pointer;
 }
+
+.image1 img:hover,
+.image2 img:hover,
+.image3 img:hover,
+.image4 img:hover,
+.image5 img:hover,
+.image7 img:hover,
+.image8 img:hover,
+.image9 img:hover {
+  height: 103%;
+  width: 103%;
+}
+
 .image3,
 .image5 {
   grid-row: span 3;
@@ -115,14 +136,18 @@ $defaultMobileSize: 150px;
   .text-image6 {
     font-size: 30px;
   }
+  .initial {
+    // height: 670px;
+    max-height: 1500px;
+  }
 }
 .initial {
   height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(6, auto);
-  gap: 10px;
-  max-width: 1000px;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 20px;
   padding: 10px;
+  max-width: 1000px;
 }

@@ -37,13 +37,13 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i, // Добавьте это правило для изображений
+        test: /\.(png|jpe?g|gif|svg)$/i, 
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: '[path][name].[ext]', // Настройте имя выходного файла
-              outputPath: 'images/', // Папка для выходных изображений
+              name: '[path][name].[ext]',
+              outputPath: 'images/', 
             },
           },
         ],

@@ -1,0 +1,39 @@
+.right-welcome {
+  position: relative;
+}
+.right-welcome img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.nav-welcome {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+.nav-welcome a {
+  color: #0a2a43;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1em;
+}
+@media (min-width: 768px) {
+  .right-welcome {
+    flex: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .right-welcome {
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+  }
+  .nav-welcome {
+    justify-content: center;
+  }
+}

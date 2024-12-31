@@ -15,13 +15,13 @@ app.use(bodyParser.json());
 app.use('/photos', express.static(path.join(__dirname, 'db/photos')));
 
 export const images = [
-  '/photos/image1.jpeg',
-  '/photos/image2.jpeg',
-  '/photos/image3.jpeg',
-  '/photos/image4.jpeg',
-  '/photos/image5.jpeg',
-  '/photos/image77.jpeg',
-  '/photos/image7.jpeg',
+  'https://github.com/AlexeyBMSTU/shop/blob/firstWeek/src/static/photos/image1.jpeg?raw=true',
+  'https://github.com/AlexeyBMSTU/shop/blob/firstWeek/src/static/photos/image2.jpeg?raw=true',
+  'https://github.com/AlexeyBMSTU/shop/blob/firstWeek/src/static/photos/image3.jpeg?raw=true',
+  'https://github.com/AlexeyBMSTU/shop/blob/firstWeek/src/static/photos/image4.jpeg?raw=true',
+  'https://github.com/AlexeyBMSTU/shop/blob/firstWeek/src/static/photos/image5.jpeg?raw=true',
+  'null',
+  'https://github.com/AlexeyBMSTU/shop/blob/firstWeek/src/static/photos/image7.jpeg?raw=true',
 ];
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
