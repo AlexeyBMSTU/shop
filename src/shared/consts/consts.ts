@@ -1,24 +1,17 @@
-
-interface ApiMethod {
-    method: 'GET' | 'POST' | 'DELETE';
-    url: string,
-    body?: any
-}
-
-interface DocumentationServices {
-    home: {
-        getImages: ApiMethod,
-    }
-}
-
 const documentationServices: DocumentationServices = {
-    home:  {
-        getImages: {
-            method: 'GET',
-            url: `/api/home/images`,
-        }
-    }
-}
+  home: {
+    getImages: {
+      method: 'GET',
+      url: '/api/home/images',
+    },
+  },
+};
 
-export default documentationServices
+const timeContentLoad = 400;
 
+const paths = {
+  GENERAL_PAGE: '/',
+  LOGIN_PAGE: '/auth',
+  REGISTRATION_PAGE: '/registration',
+};
+export { documentationServices, timeContentLoad, paths };

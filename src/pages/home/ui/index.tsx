@@ -1,16 +1,58 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Wellcome from "@/components/wellcome/wellcome";
+import React, { useEffect } from 'react';
+import './styles.scss';
+import Collage from '@/components/collage/collage';
+import Modal from '@/components/modal/modal';
 
-const App = () => {
+import Footer from '@/components/footer/footer';
+import Left from '@/components/home/left/left';
+import Right from '@/components/home/right/right';
+import homeControl from '../modal/uiLogic';
+
+const Description = ({ openModal }: any) => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Wellcome />} />
-        {/* <Route path="/auth" element={<Auth />} /> */}
-      </Routes>
-    </Router>
+    <div className='description-welcome'>
+      <Collage openModal={openModal} />
+    </div>
   );
 };
 
-export default App;
+const Home: React.FC = () => {
+  const [
+    clickSideArea,
+    isModalOpen,
+    openModal,
+    closeModal,
+    handleButtonClick,
+    selectedImage,
+  ] = homeControl();
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isModalOpen]);
+
+  return (
+    <div style={{ width: '100%', height: '100%' }} onClick={clickSideArea}>
+      {isModalOpen && <div className='dark-overlay' />}
+      <div className='container-welcome'>
+        <Left />
+        <Right />
+      </div>
+      <div style={{ marginTop: '10px' }}></div>
+      <Description openModal={openModal} />
+      <Footer />
+      {isModalOpen && (
+        <Modal closeModal={closeModal} selectedImage={selectedImage} />
+      )}
+    </div>
+  );
+};
+
+export default Home;

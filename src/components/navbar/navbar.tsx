@@ -1,19 +1,42 @@
-import React from "react";
-import "./styles.scss";
+import React from 'react';
+import './styles.scss';
+import { paths, timeContentLoad } from '@/shared/consts/consts';
+import roadTo from '@/shared/route/route';
+import { useNavigate } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ customClassName }: any) => {
+  const navigate = useNavigate();
+
+  const scrollToAbout = () => {
+    setTimeout(() => {
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        aboutSection.scrollIntoView();
+      }
+    }, timeContentLoad);
+  };
+
   return (
-    <nav className="navbar">
-      <div className="navbar__home-referens navbar__effects">
-        <h2>Домашняя страница</h2>
-      </div>
-      <div className="navbar__shop-referens navbar__effects">
-        <h2>Магазин</h2>
-      </div>
-      <div className="navbar__auth-referens navbar__effects">
-        <h2>Авторизация</h2>
-      </div>
-    </nav>
+    <div className={'nav-welcome ' + customClassName}>
+      <a
+        onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+          e.preventDefault();
+          roadTo(paths.GENERAL_PAGE, navigate);
+        }}
+      >
+        ГЛАВНАЯ
+      </a>
+      <a
+        onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+          e.preventDefault();
+          roadTo(paths.GENERAL_PAGE, navigate, scrollToAbout);
+        }}
+      >
+        О НАС
+      </a>
+      <a href='#'>СЕРВИС</a>
+      <a href='#'>КОНТАКТЫ</a>
+    </div>
   );
 };
 
