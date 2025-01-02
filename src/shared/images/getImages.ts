@@ -1,5 +1,5 @@
 import goToServer from '@/shared/axios/axios';
-import documentationServices from '@/shared/consts/consts';
+import { documentationServices } from '@/shared/consts/consts';
 
 /**
  * Получение изображений

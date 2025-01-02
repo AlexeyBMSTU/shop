@@ -1,29 +1,29 @@
 @use '@/static/styles/main.scss';
-
-.navbar {
+.nav-welcome {
   display: flex;
-  gap: 20px;
-  align-content: center;
-  align-items: center;
-  justify-content: space-evenly;
-  color: var(--text-color);
-  background-color: var(--text-hover-color);
-
-  &__home-referens,
-  &__shop-referens,
-  &__auth-referens {
-    cursor: pointer;
-    transition: color var(--time) ease;
-  }
-  &__effects:hover {
-    color: white;
-  }
+  justify-content: flex-end;
+  padding: 16px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
 }
-
-@media (max-width: 768px) {
-  .navbar__home-referens,
-  .navbar__shop-referens,
-  .navbar__auth-referens {
-    font-size: 10px;
-  }
+.nav-welcome a {
+  color: #0a2a43;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: color var(--time) ease;
+}
+.nav-welcome a:hover {
+  color: black;
+}
+.nav-welcome.login a,
+.nav-welcome.register a {
+  color: white;
+}
+.nav-welcome.login a:hover,
+.nav-welcome.register a:hover {
+  color: var(--text-hover-color);
 }

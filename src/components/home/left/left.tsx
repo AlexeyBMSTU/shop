@@ -1,7 +1,13 @@
 import React from 'react';
 import './styles.scss';
+import { useNavigate } from 'react-router-dom';
 
 const Left = () => {
+  const navigate = useNavigate();
+
+  const toAuth = () => {
+    navigate('/auth');
+  };
   return (
     <div className='left-welcome'>
       <div className='information-welcome'>
@@ -13,7 +19,7 @@ const Left = () => {
           Присоединяйтесь к нашему сообществу путешественников и делитесь своими
           впечатлениями с миром!
         </p>
-        <a className='button-welcome' href='#'>
+        <a onClick={toAuth} className='button-welcome'>
           ПРИСОЕДИНИТЬСЯ
         </a>
       </div>

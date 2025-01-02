@@ -5,9 +5,14 @@
   justify-content: center;
   width: 100%;
   background-color: var(--background-color-dark-blue);
+}
+.place__image.collage {
   border-radius: 10px;
 }
-
 .place-modal-photo {
   height: 200px;
+}
+.modal__image {
+  height: 100%;
+  max-width: 100%;
 }

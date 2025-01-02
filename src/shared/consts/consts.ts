@@ -7,4 +7,11 @@ const documentationServices: DocumentationServices = {
   },
 };
 
-export default documentationServices;
+const timeContentLoad = 400;
+
+const paths = {
+  GENERAL_PAGE: '/',
+  LOGIN_PAGE: '/auth',
+  REGISTRATION_PAGE: '/registration',
+};
+export { documentationServices, timeContentLoad, paths };

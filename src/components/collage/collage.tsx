@@ -42,7 +42,7 @@ const Collage = ({ openModal }: any) => {
               handleImageLoad={handleImageLoad}
               selectedImage={src}
               isLoading={isLoading}
-              customClassName='collage-images'
+              customClassNamePlaceIMG='collage'
             />
           </div>
         ),

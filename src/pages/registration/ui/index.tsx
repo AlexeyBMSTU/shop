@@ -4,7 +4,8 @@ import Navbar from '@/components/navbar/navbar';
 import roadTo from '@/shared/route/route';
 import { useNavigate } from 'react-router-dom';
 import { paths } from '@/shared/consts/consts';
-const LoginForm = () => {
+
+const RegistrationForm = () => {
   const handleSubmit = (event: any) => {
     event.preventDefault();
     const email = event.target.email.value.trim();
@@ -13,28 +14,30 @@ const LoginForm = () => {
     console.log('Email:', email);
     console.log('Password:', password);
   };
+
   const navigate = useNavigate();
+
   return (
     <div className='limiter'>
-      <Navbar customClassName='login' />
-      <div className='container-login'>
-        <div className='wrap-login'>
-          <div className='login-pic js-tilt' data-tilt>
+      <Navbar customClassName='register' />
+      <div className='container-register'>
+        <div className='wrap-register'>
+          <div className='register-pic js-tilt' data-tilt>
             <img
               src='https://github.com/AlexeyBMSTU/shop/blob/firstWeek/src/static/photos/image5.jpeg?raw=true'
               alt='IMG'
             />
           </div>
 
-          <form className='login-form validate-form' onSubmit={handleSubmit}>
-            <span className='login-form-title'>Авторизация</span>
+          <form className='register-form validate-form' onSubmit={handleSubmit}>
+            <span className='register-form-title'>Регистрация</span>
 
             <div
               className='wrap-input validate-input'
               data-validate='Valid email is required: ex@abc.xyz'
             >
               <input
-                className='login__input-email'
+                className='register__input-email'
                 type='email'
                 name='email'
                 placeholder='Email'
@@ -50,7 +53,7 @@ const LoginForm = () => {
               data-validate='Password is required'
             >
               <input
-                className='login__input-password'
+                className='register__input-password'
                 type='password'
                 name='pass'
                 placeholder='Password'
@@ -61,32 +64,23 @@ const LoginForm = () => {
               </span>
             </div>
 
-            <div className='container-login-form-btn'>
-              <button className='login-form-btn' type='submit'>
-                Войти
+            <div className='container-register-form-btn'>
+              <button className='register-form-btn' type='submit'>
+                Создать аккаунт
               </button>
             </div>
 
             <div className='text-center p-t-12'>
-              <span className='txt1'>Забыли</span>
-              <a className='txt2' href='#'>
-                Имя / Пароль?
-              </a>
-            </div>
-
-            <div className='text-center p-t-136'>
+              <span className='txt1'>У вас есть аккаунт?</span>
               <a
                 onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                   e.preventDefault();
-                  roadTo(paths.REGISTRATION_PAGE, navigate);
+                  roadTo(paths.LOGIN_PAGE, navigate);
                 }}
                 className='txt2'
+                href='#'
               >
-                Создать аккаунт
-                <i
-                  className='fa fa-long-arrow-right m-l-5'
-                  aria-hidden='true'
-                ></i>
+                Войти
               </a>
             </div>
           </form>
@@ -95,4 +89,4 @@ const LoginForm = () => {
     </div>
   );
 };
-export default LoginForm;
+export default RegistrationForm;

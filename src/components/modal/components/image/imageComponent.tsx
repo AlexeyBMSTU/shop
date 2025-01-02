@@ -5,18 +5,19 @@ const ImageComponent = ({
   handleImageLoad,
   selectedImage,
   isLoading,
-  customClassName,
+  customClassNamePlaceIMG,
+  customClassNameIMG,
 }: any) => {
   return (
     <div
-      className='place__image'
+      className={'place__image ' + customClassNamePlaceIMG}
       style={{ display: isLoading ? 'none' : 'flex' }}
     >
       <img
         onLoad={handleImageLoad}
         src={selectedImage}
         alt='Selected'
-        className={customClassName ? customClassName : 'modal__image'}
+        className={'modal__image ' + customClassNameIMG}
       />
     </div>
   );

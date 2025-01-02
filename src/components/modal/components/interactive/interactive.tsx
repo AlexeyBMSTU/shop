@@ -18,7 +18,8 @@ const Description = () => {
             handleImageLoad={handleImageLoad}
             selectedImage='https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?t=st=1735399991~exp=1735403591~hmac=8cd7eaac7bd108743443945a3285355c1217476a12ec316e390b8b80fcb5e480&w=1380'
             isLoading={isLoading}
-            customClassName='author-avatar'
+            customClassNamePlaceIMG='author-avatar'
+            customClassNameIMG='author-avatar'
           />
         </div>
         <div className='place__section-author-username'>Alexey</div>

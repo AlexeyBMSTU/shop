@@ -1,11 +1,13 @@
 $body-background-color: #d9c3b0;
 $body-text-color: #260b01;
 $time: 0.3s;
-
+html {
+  scroll-behavior: smooth;
+}
 :root {
   // --background-color: #0f9ebc;
   --background-color: #0a2a43;
-  --text-hover-color: #73482f;
+  --text-hover-color: #a3cdf1;
   --text-color: #260b01;
   --text-pink-color: #ff8b8b;
   --gray-color: #bfbfbf;
@@ -13,6 +15,9 @@ $time: 0.3s;
   --time: 0.3s;
   --background-color-dark-blue: #051521;
   --background-color-footer: #082439;
+  --color-blue: #4158d0;
+  --color-black: #333333;
+  --color-input: #999999;
 }
 
 body {
@@ -48,4 +53,9 @@ body::-webkit-scrollbar {
 
 * {
   box-sizing: border-box; /* Учитываем отступы и границы в размерах */
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
