@@ -7,6 +7,8 @@ import Footer from '@/components/footer/footer';
 import Left from '@/components/home/left/left';
 import Right from '@/components/home/right/right';
 import homeControl from '../modal/uiLogic';
+import { useDispatch, useSelector } from 'react-redux';
+import { exampleAction } from '@/store/reducers';
 
 const Description = ({ openModal }: any) => {
   return (
@@ -37,9 +39,16 @@ const Home: React.FC = () => {
       document.body.style.overflow = 'auto';
     };
   }, [isModalOpen]);
+  const examples = useSelector((state: any) => state.example);
+  const dispatch = useDispatch();
 
+  const handleAction = () => {
+    dispatch(exampleAction(+2));
+  };
   return (
     <div style={{ width: '100%', height: '100%' }} onClick={clickSideArea}>
+      <h1>{examples}</h1>
+      <button onClick={handleAction}>Increment</button>
       {isModalOpen && <div className='dark-overlay' />}
       <div className='container-welcome'>
         <Left />
