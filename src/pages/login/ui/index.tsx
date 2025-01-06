@@ -4,16 +4,29 @@ import Navbar from '@/components/navbar/navbar';
 import roadTo from '@/shared/route/route';
 import { useNavigate } from 'react-router-dom';
 import { paths } from '@/shared/consts/consts';
+import login from '@/pages/login/modal/modal';
+import validate from '@/shared/validate/validate';
+import handleInput from '@/shared/handlers/input/input';
 const LoginForm = () => {
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
-    const email = event.target.email.value.trim();
+    const username = event.target.username.value.trim();
     const password = event.target.pass.value;
 
-    console.log('Email:', email);
+    validate({ username, password }, document.querySelector(`.error-place`));
+
+    try {
+      const response: any = await login({ username, password });
+      alert('auth!');
+    } catch (error) {
+      console.error('Error fetching login', error);
+    }
+    console.log('Username:', username);
     console.log('Password:', password);
   };
+
   const navigate = useNavigate();
+
   return (
     <div className='limiter'>
       <Navbar customClassName='login' />
@@ -29,15 +42,13 @@ const LoginForm = () => {
           <form className='login-form validate-form' onSubmit={handleSubmit}>
             <span className='login-form-title'>Авторизация</span>
 
-            <div
-              className='wrap-input validate-input'
-              data-validate='Valid email is required: ex@abc.xyz'
-            >
+            <div className='wrap-input validate-input'>
               <input
-                className='login__input-email'
-                type='email'
-                name='email'
-                placeholder='Email'
+                className='login__input-username'
+                type='text'
+                name='username'
+                placeholder='Имя'
+                onInput={handleInput}
               />
               <span className='focus-input'></span>
               <span className='symbol-input'>
@@ -54,13 +65,14 @@ const LoginForm = () => {
                 type='password'
                 name='pass'
                 placeholder='Password'
+                onInput={handleInput}
               />
               <span className='focus-input'></span>
               <span className='symbol-input'>
                 <i className='fa fa-lock' aria-hidden='true'></i>
               </span>
             </div>
-
+            <div className='error-place'></div>
             <div className='container-login-form-btn'>
               <button className='login-form-btn' type='submit'>
                 Войти

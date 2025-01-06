@@ -67,6 +67,23 @@ module.exports = {
           "^/api/home/images": "/images",
         },
       },
+      {
+        context: "/api/auth",
+        target: "http://localhost:5000",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/api/auth/login": "/login",
+          "^/api/auth/register": "/register",
+        },
+      },
+      {
+        context: "/api/account",
+        target: "http://localhost:5000",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/api/account/account": "/account",
+        },
+      },
     ],
   },
   plugins: [

@@ -8,6 +8,13 @@ interface DocumentationServices {
   home: {
     getImages: ApiMethod;
   };
+  auth: {
+    login: ApiMethod;
+    register: ApiMethod;
+  };
+  account: {
+    get: ApiMethod;
+  };
 }
 
 interface LoaderProps {

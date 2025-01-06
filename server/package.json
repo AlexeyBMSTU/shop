@@ -6,8 +6,18 @@
     "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
-    "skipLibCheck": true 
+    "skipLibCheck": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "dependencies": {
+    "cookie-parser": "^1.4.7"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.8"
+  }
 }

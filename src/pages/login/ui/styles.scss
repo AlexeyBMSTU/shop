@@ -1,16 +1,16 @@
-.login__input-email::-webkit-input-placeholder,
+.login__input-username::-webkit-input-placeholder,
 .login__input-password::-webkit-input-placeholder {
   color: var(--color-input);
 }
-.login__input-email::-webkit-input-placeholder,
+.login__input-username::-webkit-input-placeholder,
 .login__input-password::-webkit-input-placeholder {
   color: var(--color-input);
 }
-.login__input-email::-webkit-input-placeholder,
+.login__input-username::-webkit-input-placeholder,
 .login__input-password::-webkit-input-placeholder {
   color: var(--color-input);
 }
-.login__input-email::-webkit-input-placeholder,
+.login__input-username::-webkit-input-placeholder,
 .login__input-password::-webkit-input-placeholder {
   color: var(--color-input);
 }
@@ -129,7 +129,7 @@
   margin-bottom: 10px;
 }
 
-.login__input-email,
+.login__input-username,
 .login__input-password {
   font-size: 15px;
   line-height: 1.5;
@@ -289,4 +289,12 @@
   align-content: center;
   flex-wrap: nowrap;
   flex-direction: row;
+}
+.error-place {
+  width: 100%;
+  position: relative;
+  font-size: 14px;
+  text-align: center;
+  color: #d40606;
+  height: 16px;
 }

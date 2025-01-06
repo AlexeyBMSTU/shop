@@ -5,6 +5,22 @@ const documentationServices: DocumentationServices = {
       url: '/api/home/images',
     },
   },
+  auth: {
+    login: {
+      method: 'POST',
+      url: '/api/auth/login',
+    },
+    register: {
+      method: 'POST',
+      url: '/api/auth/register',
+    },
+  },
+  account: {
+    get: {
+      method: 'GET',
+      url: '/api/account/account',
+    },
+  },
 };
 
 const timeContentLoad = 400;

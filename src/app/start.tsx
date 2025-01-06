@@ -1,8 +1,8 @@
 import { createRoot } from 'react-dom/client';
 import React from 'react';
 import App from './app';
-
-const start = () => {
+import getAccount from '@/shared/account/getAccount';
+const start = async () => {
   const documentRender = document.getElementById('root');
 
   const loader = document.querySelector(`.start-loader`);
@@ -12,6 +12,12 @@ const start = () => {
 
   const root = createRoot(documentRender);
   root.render(<App />);
+
+  try {
+    const response = await getAccount();
+  } catch (error) {
+    console.error('Error fetching in getAccount!', error);
+  }
 };
 
 export default start;

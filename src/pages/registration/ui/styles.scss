@@ -8,19 +8,19 @@
   @extend .wrap-login;
 }
 
-.register__input-email::-webkit-input-placeholder,
+.register__input-username::-webkit-input-placeholder,
 .register__input-password::-webkit-input-placeholder {
   color: var(--color-input);
 }
-.register__input-email::-webkit-input-placeholder,
+.register__input-username::-webkit-input-placeholder,
 .register__input-password::-webkit-input-placeholder {
   color: var(--color-input);
 }
-.register__input-email::-webkit-input-placeholder,
+.register__input-username::-webkit-input-placeholder,
 .register__input-password::-webkit-input-placeholder {
   color: var(--color-input);
 }
-.register__input-email::-webkit-input-placeholder,
+.register__input-username::-webkit-input-placeholder,
 .register__input-password::-webkit-input-placeholder {
   color: var(--color-input);
 }
@@ -41,9 +41,9 @@
   @extend .login-form-title;
 }
 
-.register__input-email,
+.register__input-username,
 .register__input-password {
-  @extend .login__input-email;
+  @extend .login__input-username;
 }
 
 .container-register-form-btn {

@@ -5,13 +5,12 @@ interface User {
 
 export const users: User[] = []; 
 
-// const images: any = [
-//   './photos/image1.jpeg',
-//   './photos/image2.jpeg',
-//   './photos/image3.jpeg',
-//   './photos/image4.jpeg',
-//   './photos/image5.jpeg',
-//   './photos/image6.jpeg',
-// ];
-
-// export default images;
+export const images = [
+  'https://github.com/AlexeyBMSTU/shop/blob/firstWeek/src/static/photos/image1.jpeg?raw=true',
+  'https://github.com/AlexeyBMSTU/shop/blob/firstWeek/src/static/photos/image2.jpeg?raw=true',
+  'https://github.com/AlexeyBMSTU/shop/blob/firstWeek/src/static/photos/image3.jpeg?raw=true',
+  'https://github.com/AlexeyBMSTU/shop/blob/firstWeek/src/static/photos/image4.jpeg?raw=true',
+  'https://github.com/AlexeyBMSTU/shop/blob/firstWeek/src/static/photos/image5.jpeg?raw=true',
+  'null',
+  'https://github.com/AlexeyBMSTU/shop/blob/firstWeek/src/static/photos/image7.jpeg?raw=true',
+];
