@@ -29,7 +29,7 @@ const getAccount = () => {
       res.json({ username: user.username });
     } catch (error) {
       console.error(error);
-      res.status(401).json({ message: 'Неверный токен' });
+      res.status(401).json({ message: 'Неверный токен'});
     }
   });
 }
