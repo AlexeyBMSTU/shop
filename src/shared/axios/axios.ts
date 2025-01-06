@@ -1,33 +1,39 @@
-import axios from "axios";
+import axios from 'axios';
 
+/**
+ * Функция, делающая запрос на бекенд
+ * @param objectArgs Аргументы
+ * @param callback Коллбек
+ * @returns
+ */
 const goToServer = async (
   objectArgs: { method: string; url: string; body?: any },
   callback: Function,
 ) => {
   switch (objectArgs.method) {
-    case "GET": {
+    case 'GET': {
       return axios
         .get(objectArgs.url)
         .then((response: any) => {
           return callback(response);
         })
         .catch((error: any) => {
-            throw new Error(`Axios error! - ${error}`);
+          throw new Error(`Axios error! - ${error}`);
         });
     }
-    case "POST": {
-        return axios
-          .post(objectArgs.url, objectArgs.body)
-          .then((response: any) => {
-            return callback(response);
-          })
-          .catch((error: any) => {
-            throw new Error(`Axios error! - ${error}`);
-          });
-      }
-      default: {
-        throw new Error(`Method not implemented!`);
-      }
+    case 'POST': {
+      return axios
+        .post(objectArgs.url, objectArgs.body)
+        .then((response: any) => {
+          return callback(response);
+        })
+        .catch((error: any) => {
+          throw new Error(`Axios error! - ${error}`);
+        });
+    }
+    default: {
+      throw new Error(`Method not implemented!`);
+    }
   }
 };
 

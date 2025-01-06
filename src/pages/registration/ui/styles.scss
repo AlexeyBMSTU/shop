@@ -1,0 +1,51 @@
+@use '@/pages/login/ui/styles.scss';
+
+.container-register {
+  @extend .container-login;
+}
+
+.wrap-register {
+  @extend .wrap-login;
+}
+
+.register__input-email::-webkit-input-placeholder,
+.register__input-password::-webkit-input-placeholder {
+  color: var(--color-input);
+}
+.register__input-email::-webkit-input-placeholder,
+.register__input-password::-webkit-input-placeholder {
+  color: var(--color-input);
+}
+.register__input-email::-webkit-input-placeholder,
+.register__input-password::-webkit-input-placeholder {
+  color: var(--color-input);
+}
+.register__input-email::-webkit-input-placeholder,
+.register__input-password::-webkit-input-placeholder {
+  color: var(--color-input);
+}
+
+.register-form-btn {
+  @extend .login-form-btn;
+}
+
+.register-pic {
+  @extend .login-pic;
+}
+
+.register-form {
+  @extend .login-form;
+}
+
+.register-form-title {
+  @extend .login-form-title;
+}
+
+.register__input-email,
+.register__input-password {
+  @extend .login__input-email;
+}
+
+.container-register-form-btn {
+  @extend .container-login-form-btn;
+}

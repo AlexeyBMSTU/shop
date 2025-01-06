@@ -25,27 +25,23 @@ class EventEmitter {
   }
 }
 
-// Пример использования с событиями DOM
-const button = document.createElement("button");
-button.textContent = "Click me";
+const button = document.createElement('button');
+button.textContent = 'Click me';
 document.body.appendChild(button);
 
 const emitter = new EventEmitter();
 
 const handleClick = () => {
-  console.log("Button was clicked!");
+  console.log('Button was clicked!');
 };
 
-// Подписка на событие клика
-emitter.addEventListener("click", handleClick);
+emitter.addEventListener('click', handleClick);
 
-// Добавление обработчика события клика на кнопку
-button.addEventListener("click", () => {
-  emitter.emit("click"); // Вызываем событие, когда кнопка нажата
+button.addEventListener('click', () => {
+  emitter.emit('click');
 });
 
-// Отписка от события (например, через 5 секунд)
 setTimeout(() => {
-  emitter.removeEventListener("click", handleClick);
-  console.log("Unsubscribed from click event");
+  emitter.removeEventListener('click', handleClick);
+  console.log('Unsubscribed from click event');
 }, 5000);

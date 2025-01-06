@@ -1,9 +1,12 @@
-import { createRoot } from "react-dom/client";
-import App from "../pages/home/ui";
-import React from "react";
+import { createRoot } from 'react-dom/client';
+import React from 'react';
+import App from './app';
 
 const start = () => {
-  const documentRender: HTMLElement | null = document.getElementById("root");
+  const documentRender = document.getElementById('root');
+
+  const loader = document.querySelector(`.start-loader`);
+  if (loader) loader.remove();
 
   if (!documentRender) return;
 

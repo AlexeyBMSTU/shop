@@ -11,16 +11,19 @@ $defaultMobileSize: 150px;
 }
 
 .block_img {
-  padding: 10px;
+  padding: 50px;
   display: flex;
   grid-gap: 10px;
   flex-direction: row;
   overflow-x: auto;
+  overflow-y: hidden;
   scrollbar-width: none;
   height: calc(#{$defaultSize} + #{$acceleration});
   align-items: center;
 }
-
+.img_box {
+  width: 300px;
+}
 .img_box img {
   border-radius: 30px 10px 30px 10px;
   height: $defaultSize;
@@ -49,6 +52,9 @@ $defaultMobileSize: 150px;
   .block_img {
     height: calc(#{$defaultMobileSize} + #{$acceleration});
   }
+  .initial {
+    max-height: 630px;
+  }
 }
 
 .box1 {
@@ -65,4 +71,83 @@ $defaultMobileSize: 150px;
 }
 .box5 {
   grid-area: box5;
+}
+
+.modal_image {
+  height: 100%;
+  width: 100%;
+}
+
+.image1 img,
+.image2 img,
+.image3 img,
+.image4 img,
+.image5 img,
+.image7 img,
+.image8 img,
+.image9 img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  object-fit: cover;
+  border-radius: 10px;
+  transition:
+    width var(--time) ease,
+    height var(--time) ease;
+  cursor: pointer;
+}
+
+.image1 img:hover,
+.image2 img:hover,
+.image3 img:hover,
+.image4 img:hover,
+.image5 img:hover,
+.image7 img:hover,
+.image8 img:hover,
+.image9 img:hover {
+  height: 103%;
+  width: 103%;
+}
+
+.image3,
+.image5 {
+  grid-row: span 3;
+}
+.image1 {
+  grid-row: span 4;
+}
+.image2,
+.image4,
+.text-image6,
+.image7,
+.image8,
+.image9 {
+  grid-row: span 2;
+}
+.text-image6 {
+  text-align: center;
+  overflow-wrap: break-word;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+@media (min-width: 768px) {
+  .text-image6 {
+    font-size: 30px;
+  }
+  .initial {
+    // height: 670px;
+    max-height: 1000px;
+  }
+}
+.initial {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 20px;
+  padding: 10px;
+  max-width: 1000px;
 }
