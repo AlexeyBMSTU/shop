@@ -8,7 +8,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser')
 export const app = express();
-const PORT = 5000;
+const PORT = 10000;
 
 app.use(cors());
 app.use(bodyParser.json()); 

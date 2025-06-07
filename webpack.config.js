@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const serverPORT = 10000;
+const serverHost = `http://localhost:${serverPORT}`;
 
 module.exports = {
   entry: './src/index.ts', 
@@ -61,7 +63,7 @@ module.exports = {
     proxy: [
       {
         context: "/api/home/images",
-        target: "http://localhost:5000",
+        target: serverHost,
         changeOrigin: true,
         pathRewrite: {
           "^/api/home/images": "/images",
@@ -69,7 +71,7 @@ module.exports = {
       },
       {
         context: "/api/auth",
-        target: "http://localhost:5000",
+        target: serverHost,
         changeOrigin: true,
         pathRewrite: {
           "^/api/auth/login": "/login",
@@ -78,7 +80,7 @@ module.exports = {
       },
       {
         context: "/api/account",
-        target: "http://localhost:5000",
+        target: serverHost,
         changeOrigin: true,
         pathRewrite: {
           "^/api/account/account": "/account",
